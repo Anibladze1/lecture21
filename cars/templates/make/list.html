@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All makes</title>
+</head>
+<body>
+    <a href="{% url 'make-create' %}">Add Make </a>
+    <ul>
+        {% for object in object_list %}
+            <li><a href="{% url 'book-detail' book.pk %}"></a>{{ book }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

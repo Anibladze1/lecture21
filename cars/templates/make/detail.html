@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ make }}</title>
+</head>
+<body>
+    <h1>{{ make }}</h1>
+
+    <p>Manufacturer: {{ make.manufacturer }}</p>
+    <p>Engine: {{ make.engine_vol }} </p>
+    <p>Year: {{ make.release_date }}</p>
+    <p>Color: {{ make.color }} </p>
+
+    <a href="{% url 'make-update' make.pk %}">Edit</a>
+    <form action="{% url 'book-delete' book.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="delete">
+    </form>
+</body>
+</html>
