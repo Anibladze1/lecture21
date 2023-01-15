@@ -5,7 +5,7 @@ from .views import make, manufacturer
 urlpatterns = [
     path("manufacturer/create", manufacturer.ManufacturerCreateView.as_view(), name="manufacturer-create"),
     path("manufacturers/", manufacturer.ManufacturerListView.as_view(), name="manufacturer-list"),
-    path("manufacturers/<int:pk>", manufacturer.ManufacturerDetailView.as_view, name="manufacturer-detail"),
+    path("manufacturers/<int:pk>", manufacturer.ManufacturerDetailView.as_view(), name="manufacturer-detail"),
     path("manufacturers/<int:pk>/update/", manufacturer.ManufacturerUpdateView.as_view(), name="manufacturer-update"),
     path("manufacturers/<int:pk>/delete/", manufacturer.ManufacturerDeleteView.as_view(), name="manufacturer-delete"),
 

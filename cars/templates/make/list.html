@@ -7,8 +7,8 @@
 <body>
     <a href="{% url 'make-create' %}">Add Make </a>
     <ul>
-        {% for object in object_list %}
-            <li><a href="{% url 'book-detail' book.pk %}"></a>{{ book }}</li>
+        {% for make in makes %}
+            <li><a href="{% url 'make-detail' make.pk %}">{{ make }}</a></li>
         {% endfor %}
     </ul>
 </body>

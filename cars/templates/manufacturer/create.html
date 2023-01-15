@@ -2,14 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit {{ make }}</title>
+    <title>Add a manufacturer</title>
 </head>
 <body>
     <form method="post">
         {% csrf_token %}
         {{ form }}
-
-        <input type="submit" value="update">
+        <input type="submit" value="Add">
     </form>
 </body>
 </html>

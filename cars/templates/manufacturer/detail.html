@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ manufacturer }}</title>
+</head>
+<body>
+    <h1>{{ manufacturer }}</h1>
+    <p> {{ manufacturer.brand_creation_date }}</p>
+    {% if manufacturer.picture %}
+        <img src="{{ manufacturer.picture.url }}" alt="">
+    {% endif %}
+
+    <ul>
+    {% for make in manufacturer.make.all %}
+        <li><a href="{% url 'make-detail' make.pk %}">{{ make }}</a></li>
+    {% endfor %}
+    </ul>
+
+    <a href="{% url 'manufacturer-update' manufacturer.pk %}">Edit</a>
+    <form action="{% url 'manufacturer-delete' manufacturer.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="delete">
+    </form>
+</body>
+</html>
